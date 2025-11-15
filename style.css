@@ -1,0 +1,254 @@
+/* ====================== RESET ====================== */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'gilroy', sans-serif;
+}
+
+html, body{
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background-color: #0d0d0d; /* fondo oscuro brillante */
+    color: #ffffff; /* letras blancas */
+}
+
+/* ====================== CONTENEDOR PRINCIPAL ====================== */
+#main{
+    position: relative;
+    width: 100%;
+    min-height: 400vh; /* página larga tipo móvil */
+}
+
+/* ====================== PÁGINAS ====================== */
+#page, #page1, #page2, #page3 {
+    position: relative;
+    width: 100vw;
+    height: 120vh; /* cada sección ligeramente más alta que la pantalla */
+    background-color: #0d0d0d;
+    color: #ffffff;
+}
+
+/* ====================== CANVAS ====================== */
+canvas{
+    position: relative;
+    z-index: 9;
+    max-width: 100vw;
+    max-height: 100vh;
+}
+
+/* ====================== TEXTO ANIMADO LOOP ====================== */
+#loop{
+    display: flex;
+    position: absolute;
+    top: 20%;
+    width: 100%;
+    font-size: 180px;
+    font-weight: 800;
+    white-space: nowrap;
+    text-shadow: 3px 3px 15px rgba(255,255,255,0.5);
+    animation: glow 2s infinite alternate;
+}
+
+#loop>h1{
+    font-weight: 800;
+    animation-name: anim;
+    animation-duration: 15s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+#loop>h1>span{
+    -webkit-text-stroke: 2px #ffffff;
+    color: transparent;
+    font-weight: 800;
+}
+
+@keyframes anim{
+    0%{ transform: translateX(0%); }
+    100%{ transform: translateX(-100%); }
+}
+
+/* ====================== GLOW ANIMATION ====================== */
+@keyframes glow {
+    0% { text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff, 0 0 30px #ffcc00, 0 0 40px #ffcc00; }
+    50% { text-shadow: 0 0 20px #ffffff, 0 0 30px #ffffff, 0 0 40px #ffcc00, 0 0 50px #ffcc00; }
+    100% { text-shadow: 0 0 30px #ffffff, 0 0 40px #ffffff, 0 0 50px #ffcc00, 0 0 60px #ffcc00; }
+}
+
+/* ====================== NAV ====================== */
+#nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 7%;
+    width: 100%;
+    position: fixed;
+    z-index: 99;
+    padding: 0px 30px;
+}
+
+#nav>h3{
+    font-weight: 800;
+    font-size: 36px;
+    color: #ffffff;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+}
+
+#nav>button{
+    padding: 12px 25px;
+    border-radius: 50px;
+    background-color: #ffffff;
+    color: #0d0d0d;
+    border: none;
+    font-weight: 700;
+    font-size: 18px;
+}
+
+/* ====================== PÁGINA 0 ====================== */
+#page>h3{
+    position: absolute;
+    top: 55%;
+    left: 5%;
+    font-size: 36px;
+    font-weight: 600;
+    color: #ffffff;
+    text-shadow: 2px 2px 10px rgba(255,255,255,0.5);
+}
+
+#page>h4{
+    position: absolute;
+    top: 62%;
+    left: 25%;
+    font-size: 32px;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+/* ====================== PÁGINA 1 ====================== */
+#page1>#right-text{
+    position: absolute;
+    top: 25%;
+    left: 10%;
+}
+
+#page1>#right-text>h3{
+    font-weight: 600;
+    font-size: 28px;
+    color: #ffffff;
+}
+
+#page1>#right-text>h1{
+    line-height: 1.5;
+    font-size: 80px;
+    text-shadow: 3px 3px 15px rgba(255,255,255,0.7);
+}
+
+#page1>#left-text{
+    position: absolute;
+    top: 50%;
+    right: 10%;
+    text-align: end;
+}
+
+#page1>#left-text>h1{
+    font-size: 80px;
+    line-height: 1.5;
+    text-shadow: 3px 3px 15px rgba(255,255,255,0.7);
+}
+
+#page1>#left-text>h3{
+    font-weight: 600;
+    font-size: 28px;
+    color: #ffffff;
+}
+
+/* ====================== PÁGINA 2 ====================== */
+#page2>#text1{
+    position: absolute;
+    top: 25%;
+    left: 10%;
+}
+
+#page2>#text1>h3{
+    font-weight: 600;
+    font-size: 28px;
+}
+
+#page2>#text1>h1{
+    font-size: 85px;
+    line-height: 1.5;
+    text-shadow: 3px 3px 15px rgba(255,255,255,0.7);
+}
+
+#page2>#text2{
+    position: absolute;
+    top: 55%;
+    right: 10%;
+    text-align: end;
+}
+
+#page2>#text2>p{
+    font-size: 36px;
+    font-weight: 600;
+    line-height: 1.5;
+    text-shadow: 2px 2px 10px rgba(255,255,255,0.6);
+}
+
+/* ====================== PÁGINA 3 ====================== */
+#page3>#text3{
+    position: absolute;
+    top: 40%;
+    right: 10%;
+    text-align: end;
+}
+
+#page3>#text3>h3{
+    font-weight: 600;
+    font-size: 28px;
+}
+
+#page3>#text3>h1{
+    font-size: 90px;
+    text-shadow: 3px 3px 15px rgba(255,255,255,0.7);
+}
+
+/* ====================== MENSAJES FLOTANTES DE EGO ====================== */
+#ego-messages{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 999;
+}
+
+.ego-text{
+    position: absolute;
+    font-size: 48px;
+    font-weight: 800;
+    color: #ffffff;
+    text-shadow: 3px 3px 12px rgba(0,0,0,0.8);
+    animation: floatText 12s linear infinite;
+    white-space: nowrap;
+}
+
+/* ANIMACIÓN DE FLOTA Y OSCILA */
+@keyframes floatText{
+    0%{ transform: translateY(100vh) rotate(0deg); opacity: 0; }
+    50%{ transform: translateY(50vh) rotate(5deg); opacity: 1; }
+    100%{ transform: translateY(-10vh) rotate(-5deg); opacity: 0; }
+}
+
+/* ====================== MEDIA QUERY PARA MÓVIL ====================== */
+@media (max-width: 768px) {
+    #loop { font-size: 120px; top: 15%; }
+    #page1>#right-text>h1, #page1>#left-text>h1,
+    #page2>#text1>h1, #page3>#text3>h1 { font-size: 60px; }
+    #page2>#text2>p { font-size: 28px; }
+    .ego-text { font-size: 32px; }
+    #nav>h3 { font-size: 28px; }
+}
