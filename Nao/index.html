@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GYM XTREME</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <h1 class="logo">GYM XTREME</h1>
+    <ul class="menu">
+      <li><a href="#servicios">Servicios</a></li>
+      <li><a href="#planes">Planes</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1 class="titulo">ENTRENA DURO</h1>
+      <p class="subtitulo">Transforma tu cuerpo y tu mente en GYM XTREME</p>
+      <a href="#planes" class="btn">ÚNETE HOY</a>
+    </div>
+  </section>
+
+  <!-- SERVICIOS -->
+  <section id="servicios" class="servicios">
+    <h2>Nuestros Servicios</h2>
+    <div class="grid">
+      
+      <!-- CROSSFIT -->
+      <div class="card">
+        <img src="kettlebell-3293478_1280.jpg" alt="Crossfit" class="card-img">
+        <h3>Crossfit</h3>
+        <p>Entrenamientos intensos para mejorar fuerza y resistencia.</p>
+        <p class="precio">$120.000 / mes</p>
+        <button class="btn" onclick="openForm('Crossfit')">Inscribirme</button>
+      </div>
+
+      <!-- PESAS -->
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1605296867304-46d5465a13f1?auto=format&fit=crop&w=800&q=80" alt="Pesas" class="card-img">
+        <h3>Pesas</h3>
+        <p>Zona equipada con máquinas modernas y área libre para musculación.</p>
+        <p class="precio">$100.000 / mes</p>
+        <button class="btn" onclick="openForm('Pesas')">Inscribirme</button>
+      </div>
+
+      <!-- BOXEO -->
+      <div class="card">
+        <img src="2769888.jpg" alt="Boxeo" class="card-img">
+        <h3>Boxeo</h3>
+        <p>Clases de boxeo para mejorar tu técnica, velocidad y disciplina.</p>
+        <p class="precio">$130.000 / mes</p>
+        <button class="btn" onclick="openForm('Boxeo')">Inscribirme</button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PLANES -->
+  <section id="planes" class="planes">
+    <h2>Planes de Membresía</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>BÁSICO</h3>
+        <p>Acceso a gimnasio en horarios limitados.</p>
+        <p class="precio">$80.000 / mes</p>
+        <button class="btn" onclick="openForm('Plan Básico')">Inscribirme</button>
+      </div>
+      <div class="card destacado">
+        <h3>PREMIUM</h3>
+        <p>Acceso completo + clases grupales.</p>
+        <p class="precio">$150.000 / mes</p>
+        <button class="btn" onclick="openForm('Plan Premium')">Inscribirme</button>
+      </div>
+      <div class="card">
+        <h3>VIP</h3>
+        <p>Entrenador personal + todo incluido.</p>
+        <p class="precio">$250.000 / mes</p>
+        <button class="btn" onclick="openForm('Plan VIP')">Inscribirme</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- SUPLEMENTOS -->
+  <section id="suplementos" class="suplementos">
+    <h2>Suplementos</h2>
+    <div class="grid">
+
+      <!-- PROTEÍNAS -->
+      <div class="card">
+        <img src="D_NQ_NP_2X_701814-MLC31212027299_062019-F.jpg" alt="Proteínas" class="card-img">
+        <h3>Proteínas</h3>
+        <p>Variedades de proteína en polvo para aumentar tu masa muscular.</p>
+        <button class="btn" onclick="showSupplements('proteinas')">Ver Variedades</button>
+      </div>
+
+      <!-- CREATINAS -->
+      <div class="card">
+        <img src="creatina_pura_300g_probiotica_385_1_20191205103634.webp" alt="Creatinas" class="card-img">
+        <h3>Creatinas</h3>
+        <p>Mejora tu fuerza y resistencia con nuestras creatinas premium.</p>
+        <button class="btn" onclick="showSupplements('creatinas')">Ver Variedades</button>
+      </div>
+
+      <!-- ENERGÉTICOS -->
+      <div class="card">
+        <img src="energeticosup (1).jpg" alt="Energéticos" class="card-img">
+        <h3>Energéticos</h3>
+        <p>Bebidas y suplementos energéticos para entrenar con más intensidad.</p>
+        <button class="btn" onclick="showSupplements('energeticos')">Ver Variedades</button>
+      </div>
+
+    </div>
+
+    <!-- CONTENEDOR DE VARIEDADES -->
+    <div id="supplement-varieties" class="varieties"></div>
+
+    <!-- CONTENEDOR DEL CARRITO -->
+    <div class="cart-container"></div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section id="contacto" class="contacto">
+    <h2>Contáctanos</h2>
+    <p>¿Listo para dar el siguiente paso? Escríbenos por WhatsApp</p>
+    <a href="https://wa.me/573000000000" target="_blank" class="btn">Enviar Mensaje</a>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>&copy; 2025 GYM XTREME | Todos los derechos reservados</p>
+  </footer>
+
+  <!-- MODAL FORMULARIO -->
+  <div id="formModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeForm()">&times;</span>
+      <h2>Formulario de Inscripción</h2>
+      <form id="serviceForm">
+        <input type="hidden" id="selectedService" name="service">
+        
+        <label for="name">Nombre completo:</label>
+        <input type="text" id="name" name="name" required>
+        
+        <label for="email">Correo electrónico:</label>
+        <input type="email" id="email" name="email" required>
+        
+        <label for="phone">Teléfono:</label>
+        <input type="tel" id="phone" name="phone" required>
+        
+        <button type="submit" class="btn">Enviar Inscripción</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
